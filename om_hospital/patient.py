@@ -5,6 +5,7 @@ class HospitalPatient(models.Model):
     _name = 'hospital.patient'
     _rec_name = 'patient_name'
     _description = 'Patient Record'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
     patient_name = fields.Char(string='Name', required=True)
     name_seq = fields.Char(string='Patient ID', required=True, copy=False, readonly=True,
