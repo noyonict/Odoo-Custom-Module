@@ -12,6 +12,7 @@ class HospitalPatient(models.Model):
     _rec_name = 'patient_name'
     _description = 'Patient Record'
     _inherit = ['mail.thread', 'mail.activity.mixin']
+    _order = 'id desc'
 
     @api.constrains('patient_age')
     def check_age(self):

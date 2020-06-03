@@ -9,8 +9,9 @@
     'depends': ['mail', 'sale'],
     'data': [
         'security/ir.model.access.csv',
-        'views/sequence.xml',
+        'data/sequence.xml',
         'views/patient.xml',
+        'views/appointment.xml',
     ],
     'demo': [],
     'installable': True,
