@@ -74,12 +74,54 @@
         </field>
     </record>
 
+    <record id="open_patient_appointment" model="ir.actions.act_window">
+        <field name="name">Patient</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hospital.appointment</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('patient_id', '=', active_id)]</field>
+<!--        <field name="context">{"search_default_male":1}</field>-->
+<!--        <field name="context">{"search_default_gender":1}</field>-->
+<!--        <field name="context">{"search_default_female":1}</field>-->
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+                Create First Appointment For This Patient
+            </p>
+            <p>
+                <!-- More details about what a user can do with this object will be OK -->
+            </p>
+        </field>
+    </record>
+
     <record id="patient_form" model="ir.ui.view">
         <field name="name">hospital.patient.form</field>
         <field name="model">hospital.patient</field>
         <field name="arch" type="xml">
             <form string="Patient">
                 <sheet>
+
+
+                    <div class="oe_button_box" name="button_box">
+                            <button name="open_patient_appointment"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-calendar">
+                                    <field name="appointment_count"
+                                           string="Appointment"
+                                           widget="statinfo"/>
+                            </button>
+
+                            <button name="%(open_patient_appointment)d"
+                                    type="action"
+                                    class="oe_stat_button"
+                                    icon="fa-usd">
+                                    <field name="appointment_count"
+                                           string="Appointment"
+                                           widget="statinfo"/>
+                            </button>
+                    </div>
+
                     <div class="oe_title">
                         <h1>
                             <field name="name_seq" readonly="1"/>
