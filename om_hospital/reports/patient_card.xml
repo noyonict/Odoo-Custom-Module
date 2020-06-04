@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="report_patient">
+        <t t-call="web.html_container">
+<!--            <t t-call="web.internal_layout">-->
+             <t t-call="web.external_layout">
+                <div class="page">
+                    <t t-foreach="docs" t-as="doc">
+                        <h2><t t-esc="doc.name_seq" /></h2>
+                        Name: <t t-esc="doc.patient_name" /> <br />
+                        Age: <t t-esc="doc.patient_age" /> <br />
+                        Gender: <t t-esc="doc.gender" /> <br />
+                        Notes: <t t-esc="doc.notes" /> <br />
+                        Patient Image: <img src="t-esc='doc.image'" /> <br />
+                    </t>
+                </div>
+            </t>
+        </t>
+    </template>
+
+
+</odoo>
