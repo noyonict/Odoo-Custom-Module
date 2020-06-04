@@ -20,6 +20,11 @@
         <field name="model">hospital.appointment</field>
         <field name="arch" type="xml">
             <form string="Patient">
+                <header>
+                    <button name="action_confirm" type="object" string="Confirm" states="draft" class="oe_highlight"/>
+                    <button name="action_done" type="object" string="Make Done" states="confirm" class="oe_highlight"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirm,done"/>
+                </header>
                 <sheet>
                     <div class="oe_title">
                         <h1>
@@ -65,7 +70,7 @@
         <field name="name">Patient Appointment</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hospital.appointment</field>
-        <field name="view_mode">calendar,tree,form</field>
+        <field name="view_mode">tree,calendar,form</field>
 <!--        <field name="context">{"search_default_male":1}</field>-->
 <!--        <field name="context">{"search_default_gender":1}</field>-->
 <!--        <field name="context">{"search_default_female":1}</field>-->
