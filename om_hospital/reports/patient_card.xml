@@ -12,6 +12,10 @@
                         Gender: <t t-esc="doc.gender" /> <br />
                         Notes: <t t-esc="doc.notes" /> <br />
                         Patient Image: <img src="t-esc='doc.image'" /> <br />
+                        <img
+                          t-attf-src="data:image/*;base64,{{doc.image}}"
+                          t-att-alt="doc.image"
+                          />
                     </t>
                 </div>
             </t>
