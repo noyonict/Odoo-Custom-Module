@@ -100,8 +100,6 @@
         <field name="arch" type="xml">
             <form string="Patient">
                 <sheet>
-
-
                     <div class="oe_button_box" name="button_box">
                             <button name="open_patient_appointment"
                                     type="object"
