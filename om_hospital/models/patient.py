@@ -59,6 +59,9 @@ class HospitalPatient(models.Model):
     ], setring='Age Group', default='major', compute='set_age_group')
     notes = fields.Text(string='Notes')
     image = fields.Binary(string='Image')
+    contact_number = fields.Char(string='Contact Number', track_visibility='always')
+    email = fields.Char(string='Email', track_visibility='always')
+    blood_group = fields.Char(string='Blood Group', track_visibility='always')
     appointment_count = fields.Integer(string="Appointment", compute='get_appointment_count')
 
     @api.model
