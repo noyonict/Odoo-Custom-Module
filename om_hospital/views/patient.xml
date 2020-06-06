@@ -160,7 +160,8 @@
             <tree string="Patient">
                 <field name="name_seq"/>
                 <field name="patient_name"/>
-                <field name="patient_age"/>
+<!--                <field name="patient_age" sum="Total of Ages"/>-->
+                <field name="patient_age" avg="Avg of Ages"/>
                 <field name="gender"/>
                 <field name="blood_group"/>
                 <field name="contact_number"/>
