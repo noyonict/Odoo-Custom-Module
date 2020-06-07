@@ -12,9 +12,9 @@ from odoo.exceptions import ValidationError
 #         return res
 
 
-class SaleOrderInherit(models.Model):
-    _inherit = 'sale.order'
-    patient_name = fields.Char(string='Patient Name')
+# class SaleOrderInherit(models.Model):
+#     _inherit = 'sale.order'
+#     patient_name = fields.Char(string='Patient Name')
 
 
 class HospitalPatient(models.Model):
@@ -73,6 +73,7 @@ class HospitalPatient(models.Model):
     email = fields.Char(string='Email', track_visibility='always')
     blood_group = fields.Char(string='Blood Group', track_visibility='always')
     appointment_count = fields.Integer(string="Appointment", compute='get_appointment_count')
+    active = fields.Boolean("Active", default=True)
 
     @api.model
     def create(self, vals):
