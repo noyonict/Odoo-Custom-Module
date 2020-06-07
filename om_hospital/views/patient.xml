@@ -46,6 +46,7 @@
                                 <ul>
                                     <li>ID: <field name="name_seq" /></li>
                                     <li>Age: <field name="patient_age" /></li>
+                                    <li>Doctor: <field name="doctor_id" /></li>
                                 </ul>
                             </div>
                         </div>
@@ -141,6 +142,7 @@
                                    options="{&quot;zoom&quot;: true, &quot;preview_image&quot;:&quot;image&quot;}"/>
                             <field name="contact_number" />
                             <field name="email" />
+                            <field name="doctor_id" />
                         </group>
                     </group>
                     <group>
@@ -168,6 +170,7 @@
                 <field name="gender"/>
                 <field name="blood_group"/>
                 <field name="contact_number"/>
+                <field name="doctor_id"/>
             </tree>
         </field>
     </record>
@@ -191,7 +194,7 @@
     </record>
 
     <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
-    <menuitem id="hospital_root" name="Hospital Mgt" sequence="1"/>
+    <menuitem id="hospital_root" name="Hospital Mgt" sequence="-1"/>
 
     <!-- This Menu Item Must have a parent -->
     <menuitem id="hospital_patient"

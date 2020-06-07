@@ -74,6 +74,7 @@ class HospitalPatient(models.Model):
     blood_group = fields.Char(string='Blood Group', track_visibility='always')
     appointment_count = fields.Integer(string="Appointment", compute='get_appointment_count')
     active = fields.Boolean("Active", default=True)
+    doctor_id = fields.Many2one('hospital.doctor', string="Doctor")
 
     @api.model
     def create(self, vals):
