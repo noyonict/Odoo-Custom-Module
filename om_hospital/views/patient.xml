@@ -101,7 +101,8 @@
         <field name="arch" type="xml">
             <form string="Patient">
                 <header>
-                    <button name="%(om_hospital.create_appointment_wizard)d" string="Create Appointment" type="action" class="oe_highlight"/>
+                    <button name="%(om_hospital.create_appointment_wizard)d" string="Create Appointment" type="action" class="oe_highlight"
+                    context="{'default_patient_id': active_id}"/>
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
@@ -139,13 +140,16 @@
                             <field name="patient_age"/>
                             <field name="age_group"/>
                             <field name="gender"/>
+                            <field name="contact_number" />
+                            <field name="email" />
                         </group>
                         <group>
                             <field name="image" widget="image" class="oe_avatar"
                                    options="{&quot;zoom&quot;: true, &quot;preview_image&quot;:&quot;image&quot;}"/>
-                            <field name="contact_number" />
-                            <field name="email" />
+
                             <field name="doctor_id" options="{'no_create': True, 'no_create_edit': True, 'no_open': True}" />
+                            <field name="doctor_phone"/>
+                            <field name="doctor_email"/>
                         </group>
                     </group>
                     <group>
