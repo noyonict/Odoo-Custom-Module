@@ -13,6 +13,7 @@
         'wizards/create_appointment.xml',
         'data/data.xml',
         'data/sequence.xml',
+        'data/mail_template.xml',
         'views/patient.xml',
         'views/appointment.xml',
         'views/doctor.xml',
