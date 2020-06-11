@@ -78,6 +78,12 @@ class HospitalPatient(models.Model):
     doctor_phone = fields.Char('Doctor Phone')
     doctor_email = fields.Char('Doctor Email')
 
+    def name_get(self):
+        res = []
+        for field in self:
+            res.append((field.id, '%s - %s' % (field.name_seq, field.patient_name)))
+        return res
+
     @api.onchange('doctor_id')
     def set_doctor_info(self):
         for rec in self:
